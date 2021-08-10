@@ -1,0 +1,56 @@
+<section
+  style="
+    height: 700px;
+    background-image: url('assets/img/header-bg.jpg');
+    background-size: cover;
+  "
+  class="beds"
+>
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="bed()">
+      <h2 class="text-center"><strong>Enter</strong> Number of Beds.</h2>
+      <div *ngIf="error" class="alert alert-danger">
+        {{ error }}
+      </div>
+      <div *ngIf="success" class="alert alert-success">
+        {{ success }}
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="noOfKingbeds"
+          class="form-control"
+          type="number"
+          name="NoOfKingbeds"
+          placeholder="Number Of Kingbeds"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="noOfSinglebeds"
+          class="form-control"
+          type="number"
+          name="NoOfSinglebeds"
+          placeholder="Number Of Singlebeds"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          formControlName="noOfDoublebeds"
+          class="form-control"
+          type="number"
+          name="NoOfDoublebeds"
+          placeholder="Number Of Doublebeds"
+        />
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+      </div>
+      <div *ngIf="success" class="form-group">
+        <button routerLink="/guests" class="btn btn-success btn-block">
+          Next
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
